@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width , initial-scale= 1.0">
+        <meta charset="UTF-8">
+        <title>Arrow function</title>
+        <style>
+            p{
+                margin: 10px;
+                padding: 5px;
+                width: 400px;
+                background-color: rgb(193, 221, 188);
+                color: black;
+                font-size: 20px;
+            }
+        </style>
+
+    </head>
+    <body>
+        <h2>ES6 Features</h2>
+        <p id ="personDetails"></p>
+        <p id="fruitsDetails"></p>
+        <p id="class"></p>
+
+
+        <script>
+        // ES6_1 Task
+          // Rewrite const and let 
+             const greeting = "Welcome";
+             let uname;
+
+         // function with default parameters
+            const welcomeUser = (name = "Vasanthi",message = "Have a Nice day !") =>{
+                return ` ${greeting},${name} ! ${message}`;
+            };
+
+         console.log(welcomeUser());
+         console.log(welcomeUser(uname ,"Nice to meet You "));
+
+       //ES6_2 Task
+         // Object Destructring
+           const person = {
+            name : "Sundhar Pitchai",
+            designation : "CEO of Google"
+           };
+
+           const {name,designation} = person;
+           document.getElementById("personDetails").innerHTML = `${name} is a ${designation}`;
+
+        // spread operator
+
+           const fruits = ["Banana","Apple","Mango"];
+        // copy an array 
+           const newFruits = [...fruits];
+
+           const addFruits =[...newFruits,"Grapes","Orange"];
+           document.getElementById("fruitsDetails").innerHTML = " Fruit List : " + addFruits;
+
+       // Rest Ooerator
+          
+           const sum = (...num) => num.reduce((a,b) => a + b , 0);
+           console.log(sum(10,30));
+
+    //#S6_3 Task
+      // Arrow concise function
+         const add = (a,b) => a + b ;
+         const mul = (x,y) => x * y ;
+         const msg = () => "Hello All ";
+
+         console.log(add(5,10));
+         console.log(mul(4,7));
+         console.log(msg());
+
+    // Class and Construtor
+       
+     class Student  {
+constructor(name, course){
+             this.name = name;
+             this.course = course;
+        }
+        
+       // method calling
+          displayInfo(){
+            return `${this.name} is learning ${this.course}.`;
+          }
+     }
+
+
+     // Create object
+        const s1 = new Student ("Vasanthi" , "Full Stack");
+      
+         document.getElementById("class").innerHTML = s1.displayInfo();
+
+    
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
